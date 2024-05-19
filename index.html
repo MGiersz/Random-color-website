@@ -1,0 +1,58 @@
+
+<!DOCTYPE html> 
+<html lang="pl"> 
+
+  <head>
+	<meta charset="utf-8"> 
+    <title>Random color generate</title> 
+  <meta http-equiv="X-Ua-Compatible" content="IE=edge,chrome=1"> 
+  <style>
+    body{
+      margin:0;
+      padding: 0;
+      background-color: #d64d4d;
+      font-family: "Montserrat";
+    }
+    .container{
+      margin-top: 300px;
+      text-align: center;
+    }
+    #color{
+      display: block;
+      color: white;
+      font-size: 40px;
+      text-transform: uppercase;
+    }
+    .container button{
+      background: none;
+      outline: none;
+      color: white;
+      border: 3px solid white;
+      cursor: pointer;
+      font-size: 23px;
+    }
+  </style>
+  </head>
+  <body> 
+
+    <div class="container">
+      <span id="color">#d64d4d</span>
+      <button onclick="generate()">Get new Color</button>
+    </div>
+
+    <script>
+      function generate(){
+        var symbols, color;
+        symbols="0123456789ABCDEF";
+        
+        color="#";
+        for(var i=0; i<6; i++){
+          color+=symbols[Math.floor(Math.random()*16)]
+        }
+        document.body.style.background = color;
+        document.getElementById("color").innerHTML=color;
+      }
+      
+    </script>
+  </body>
+</html> 
